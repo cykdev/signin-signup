@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Email</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lightgray;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 20px;
+            width: min(310px, calc(100% - 40px));
+            box-shadow: 0 0 15px rgba(0,0,0,0.15);
+            position: relative;
+        }
+
+        input::-webkit-inner-spin-button,
+        input::-webkit-outer-spin-button {
+            display: none;
+        }
+
+        .verify-email-page {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .verify-email-page h1 {
+            font-weight: 800;
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .verify-email-page p {
+            font-size: 14px;
+            background-color: lightgreen;
+            padding: 7px;
+            border-radius: 5px;
+            margin: 0 5px;
+            margin-bottom: 5px;
+        }
+
+        .verify-email-page > div {
+            width: 100%;
+            margin-bottom: 5px;
+            position: relative;
+        }
+        .verify-email-page input {
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            border: 1px solid;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .verify-email-page button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #252525;
+            color: white;
+        }
+
+        .verify-email-page button:active {
+            background-color: #575757;
+        }
+
+        .input-box label {
+            font-size: 14px;
+        }
+
+        .veL {
+            margin-top: -4px;
+        }
+        
+        .veL label {
+            font-size: 11px;
+        }
+
+        .diffEmail {
+            text-align: center;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="verify-email-page hidden" id="verify-email-page">
+            <h1>Email Verification</h1>
+            <p>We've sent a verification code to your Email <span id="userEmail"></span> </p>
+            <div class="input-box">
+                <label for="">Enter your 6-digit code</label>
+                <input type="number" id="verOTP" placeholder="123456" required>
+                <label for=""></label>
+                <div class="veL">
+                    <label class="vLabel hidden" id="vLabel">Code will expired in <span>60</span>s. <a class="vResend hidden" id="vResend" href="#">Resend?</a></label>
+                </div>
+            </div>
+            <div>
+                <button>Verify Email</button>
+            </div>
+            <div class="diffEmail">
+                <label>Use different email? <a onclick="showSignUpPage()" href="#">Click here</a></label>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
