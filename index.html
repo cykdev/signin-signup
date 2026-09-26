@@ -324,7 +324,27 @@
             SUPABASE_ANON_KEY
         )
 
-        
+        async function signinBtn() {
+            const email = document.getElementById('lEmail').value.trim().toLowerCase();
+            const password = document.getElementById('lPassword').value;
+
+            if (email === "" || password === "") {
+                window.alert("Please fill up the empty ones.");
+                return;
+            }
+
+            const { data, error } = await supabaseClient.auth.signInWithPassword ({
+                email: email,
+                password: password
+            })
+
+            if (error) {
+                window.alert(error.message);
+                return;
+            }
+
+            window.alert("Login Successfully!");
+        }
 
 
 
